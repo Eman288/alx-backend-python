@@ -1,4 +1,4 @@
-#!/use/bin/env python3
+#!/usr/bin/env python3
 """a module to Write an asynchronous coroutine"""
 import asyncio
 import random
