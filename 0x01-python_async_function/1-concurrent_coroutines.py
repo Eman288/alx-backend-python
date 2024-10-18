@@ -8,7 +8,7 @@ wait_random = __import__('0-basic_async_syntax').wait_random
 
 async def wait_n(n: int, max_delay: int) -> List[float]:
     """ a function to execute wait_random n times"""
-    l = []
+    l: List = []
     while n != 0:
         b = await asyncio.gather(wait_random(max_delay))
         d = b[0]
