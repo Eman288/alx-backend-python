@@ -10,7 +10,14 @@ async def wait_n(n: int, max_delay: int) -> List[float]:
     """ a function to execute wait_random n times"""
     l = []
     while n != 0:
-        b = asyncio.gather(wait_random(max_delay))
-        l.append(await b)
+        b = await asyncio.gather(wait_random(max_delay))
+        d = b[0]
+        
+        for i, val in enumerate(l):
+            if d < val:
+                l.insert(i, d)
+                break
+            else:
+                l.append(d)
         n -= 1
     return l
