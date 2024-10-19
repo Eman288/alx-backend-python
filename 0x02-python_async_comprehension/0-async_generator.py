@@ -2,9 +2,10 @@
 """a module for task0"""
 import random
 import asyncio
-from typing import Generator
+from typing import AsyncGenerator
 
-async def async_generator() -> Generator[int, None, None]:
+
+async def async_generator() -> AsyncGenerator[int, None]:
     """a function to yield a random number"""
     for i in range(10):
         await asyncio.sleep(1)
